@@ -22,7 +22,7 @@ export const EditToDoForm = ({ editTask }) => {
         <div className='TodoWrapper'>
             <h1>Get Things Done!</h1>
             <form className='TodoForm' onSubmit={handleSubmission}>
-                <input type="text" value={value} className='todo-input' placeholder='what is the task today?' onChange={handleInputValue} />
+                <input type="text" value={value} className='todo-input' placeholder='update your task here?' onChange={handleInputValue} />
                 <button type="submit" className='todo-btn'>Update Task</button>
             </form>
         </div>
