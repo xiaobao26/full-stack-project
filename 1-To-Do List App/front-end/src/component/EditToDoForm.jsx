@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-export const EditToDoForm = ({ editTask }) => {
+export const EditToDoForm = ({ editTask, tasks }) => {
+
     const params = useParams();
     console.log("id:", params.taskId);
-    const [value, setValue] = useState("");
+    const targetTask = tasks.find(todo => todo.id === params.taskId);
+    const [value, setValue] = useState(targetTask.task);
     const navigate = useNavigate();
 
     const handleInputValue = (e) => {
@@ -22,7 +24,7 @@ export const EditToDoForm = ({ editTask }) => {
         <div className='TodoWrapper'>
             <h1>Get Things Done!</h1>
             <form className='TodoForm' onSubmit={handleSubmission}>
-                <input type="text" value={value} className='todo-input' placeholder='update your task here?' onChange={handleInputValue} />
+                <input type="text" value={value} className='todo-input'onChange={handleInputValue} />
                 <button type="submit" className='todo-btn'>Update Task</button>
             </form>
         </div>

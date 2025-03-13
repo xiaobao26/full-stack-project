@@ -85,7 +85,7 @@ function App() {
           <Route path="/" element={<TodoForm addTodo={addTodo} />}>
             <Route path="tasks" element={<Todos todos={todos} toggleComplete={toggleComplete} deleteTask={deleteTask} />} />
           </Route>
-          <Route path="/update/:taskId" element={<EditToDoForm editTask={editTask}/>} />
+          <Route path="/update/:taskId" element={<EditToDoForm editTask={editTask} tasks={todos} />} />
           
       </Routes>
     </BrowserRouter>
